@@ -1,0 +1,20 @@
+{
+  "mock": [
+    {
+      "name": "January",
+      "values": 25
+    },
+    {
+      "name": "February",
+      "values": 29
+    },
+    {
+      "name": "March",
+      "values": 37
+    },
+    {
+      "name": "April",
+      "values": 55
+    }
+  ]
+}
