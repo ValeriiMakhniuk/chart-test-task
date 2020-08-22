@@ -2,7 +2,7 @@ const faker = require('../../node_modules/faker');
 const fs = require('fs');
 const path = require('path');
 
-const data = [];
+const accounts = [];
 
 const generateAccount = () => ({
   id: faker.random.uuid(),
@@ -11,7 +11,11 @@ const generateAccount = () => ({
 });
 
 for (let i = 0; i < 5; i++) {
-  data.push(generateAccount());
+  accounts.push(generateAccount());
 }
+
+const data = {
+  accounts,
+};
 
 fs.writeFileSync(path.join(__dirname, 'db.json'), JSON.stringify(data));
