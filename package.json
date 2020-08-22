@@ -23,7 +23,8 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "start:server": "json-server --watch db.json --port 4000",
+    "start:server": "node ./src/server/run-mock-server.js",
+    "generate-server-data": "node ./src/server/generate-mock-data.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
