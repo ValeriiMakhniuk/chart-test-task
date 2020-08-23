@@ -6,14 +6,18 @@ export interface MAccount {
   value: string;
 }
 
-export const getAccounts = async (): Promise<CharacterData[]> => {
+export const getAccounts = async (): Promise<MAccount[]> => {
   return await axios.get('/accounts').then((response) => response.data);
 };
 
-export const addAccount = async (account: Partial<MAccount>) => {
-  return await axios.post('/acounts', account, {
-    headers: { 'Content-Type': 'application/json' },
-  });
+export const addAccount = async (
+  account: Partial<MAccount>
+): Promise<MAccount> => {
+  return await axios
+    .post('/acounts', account, {
+      headers: { 'Content-Type': 'application/json' },
+    })
+    .then((response) => response.data);
 };
 
 export const updateAccount = async (
