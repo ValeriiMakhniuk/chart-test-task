@@ -3,7 +3,7 @@ import axios from 'axios';
 export interface MAccount {
   id: string;
   name: string;
-  value: string;
+  amount: number;
 }
 
 export const getAccounts = async (): Promise<MAccount[]> => {
