@@ -10,6 +10,8 @@ import {
   deleteAccount as deleteAccountFromApi,
 } from '../../api/api';
 
+import { delay } from '../../utils/delay';
+
 interface AccountsState {
   byId: Record<string, MAccount>;
   allIds: string[];
@@ -111,7 +113,8 @@ export const accountsReducer = accountsSlice.reducer;
 
 export const getAccounts = (): AppThunk => async (dispatch) => {
   try {
-    dispatch(getAccountsStart);
+    dispatch(getAccountsStart());
+    await delay();
     const accounts = await getAccountsFromApi();
     dispatch(getAccountsSucess(accounts));
   } catch (error) {
