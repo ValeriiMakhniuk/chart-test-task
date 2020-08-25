@@ -6,7 +6,7 @@ const accounts = [];
 
 const generateAccount = () => ({
   id: faker.random.uuid(),
-  name: faker.finance.accountName(),
+  name: faker.name.firstName(),
   amount: faker.finance.amount(0, 1000, 0),
 });
 
